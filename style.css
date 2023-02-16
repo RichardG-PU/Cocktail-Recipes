@@ -1,3 +1,4 @@
-body {
-    background-image: linear-gradient(to right top, #ffffff, #f5e6f9, #f8c9e6, #ffabc4, #ff9093, #ff9371, #f49e4d, #d8ad2d, #b5c851, #90de84, #6deebc, #5ffbf1);
-}
+html {
+    height: 100%;
+    background-image: linear-gradient(to right bottom, #ffffff, #f5e7f9, #f9cde7, #ffb0c6, #ff9798, #ff9a78, #f2a258, #d7af3e, #b7c95b, #94de89, #72eebe, #5ffbf1);
+  }
