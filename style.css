@@ -3,13 +3,13 @@ html {
   background-image: linear-gradient(to right bottom, #ffffff, #f7ecfa, #f9d6eb, #ffc0d0, #ffacaa, #ffae91, #f6b579, #e1bf67, #c6d47f, #abe6a4, #97f3ce, #93fdf6);
 }
 
-*{
-  padding: 0; 
-  margin: 0; 
+* {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   height: 400px;
 }
 
@@ -23,21 +23,23 @@ header {
   position: relative;
   overflow: hidden;
   border-radius: 0 0 85% 85% / 30%;
-  transition: height 1.5s; /* gotta change this depending on height */
+  transition: height 1.5s;
+  /* gotta change this depending on height */
 }
 
 header:hover {
-  height: 400px; /* gotta change this depending on elements in the header */
+  height: 400px;
+  /* gotta change this depending on elements in the header */
 }
 
-header .overlay{
+header .overlay {
   width: 100%;
   height: 100%;
   padding: 50px;
   color: #FFF;
   text-shadow: 1px 1px 1px #333;
-  background-image: linear-gradient( 135deg, #9f05ff69 10%, #fd5e086b 100%);
-  
+  background-image: linear-gradient(135deg, #9f05ff69 10%, #fd5e086b 100%);
+
 }
 
 h1 {
@@ -47,7 +49,8 @@ h1 {
 }
 
 
-h3, p {
+h3,
+p {
   font-family: 'Open Sans', sans-serif;
   margin-bottom: 30px;
 }
@@ -61,7 +64,7 @@ h3, p {
   color: #000000;
   cursor: pointer;
   display: inline-block;
-  font-family: Clarkson,Helvetica,sans-serif;
+  font-family: Clarkson, Helvetica, sans-serif;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0;
@@ -75,7 +78,7 @@ h3, p {
   text-decoration: none;
   text-rendering: geometricprecision;
   text-transform: uppercase;
-  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1), background-color 100ms cubic-bezier(.694, 0, 0.335, 1), color 100ms cubic-bezier(.694, 0, 0.335, 1);
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -127,5 +130,12 @@ button {
 }
 button:hover{
   cursor: pointer;
+}
+
+
+Background- image un peu plus pale
+html{
+height: 100%;
+background-image: linear-gradient(to right bottom, #ffffff, #f9f1fb, #fbe1ef, #ffd1da, #ffc2be, #fec2ab, #f6c69a, #e5cb8e, #d0db9c, #bbe8b6, #aaf3d5, #a2fbf5);
 }
 */
