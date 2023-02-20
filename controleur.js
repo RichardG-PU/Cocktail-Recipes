@@ -6,6 +6,7 @@ class Controleur {
     description;
     humidity;
     wind;
+    vue = new Vue();
 
 
 
@@ -22,6 +23,7 @@ class Controleur {
                 this.humidity = xmlDoc.getElementsByTagName("humidity")[0];
                 this.wind = xmlDoc.getElementsByTagName("wind")[0];
                 console.log(this.temp);
+                this.vue.afficheMeteo();
 
 
 
@@ -30,5 +32,10 @@ class Controleur {
             }
             );
     }
+};
+window.onload = function () {
+    (new Controleur()).loadMeteo();
+
+
 };
 

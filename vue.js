@@ -1,24 +1,23 @@
-var c;
-
-function afficheMeteo() {
+class vue {
     c = new Controleur();
-    c.loadMeteo();
-    document.getElementById("tempNumber").innerHTML = c.temp;
-    console.log(c.temp);
-    console.log("hello");
+
+
+    afficheMeteo() {
+        this.c = new Controleur();
+        this.c.loadMeteo();
+        document.getElementById("tempNumber").innerHTML = this.c.temp;
+        console.log(this.c.temp);
+        console.log("hello");
+
+    }
+
+    afficheListeRecettes() {
+
+    }
+    afficheUneRecette() {
+
+    }
+
 
 }
 
-function afficheListeRecettes() {
-
-}
-
-function afficheUneRecette() {
-
-}
-
-window.onload = function () {
-
-    afficheMeteo()
-    console.log(c.temp);
-};
