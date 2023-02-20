@@ -11,11 +11,11 @@ html {
 }
 
 .weather {
-  width: 40%;
-  height: 100%; 
+  width: 400px;
+  height: 600px;
   margin: auto;
   margin-top: 2%;
-  display:block;
+  display: block;
   background: rgba(255, 255, 255, 0.72);
   border-radius: 21px;
 }
@@ -27,7 +27,7 @@ html {
   margin-left: 20px;
   background-repeat: no-repeat;
   background-size: contain;
-  display:inline-block;
+  display: inline-block;
   background-image: url(img/locationIcon.png);
 }
 
@@ -36,7 +36,7 @@ html {
   height: 30px;
   margin-top: 20px;
   margin-right: 20px;
-  float:right;
+  float: right;
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url(img/search.png);
@@ -48,7 +48,7 @@ html {
   margin-left: 40px;
   background-repeat: no-repeat;
   background-size: contain;
-  display:inline-block;
+  display: inline-block;
   font-size: 54px;
   font-family: 'Dancing Script', cursive;
 }
@@ -108,7 +108,8 @@ p {
   color: #000000;
   cursor: pointer;
   display: inline-block;
-  font-family: Verdana, Geneva, Tahoma, sans-serif; /* A VOIR */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* A VOIR */
   font-size: 12px;
   letter-spacing: 0;
   line-height: 1em;
@@ -157,6 +158,63 @@ p {
 .button-48 span {
   z-index: 1;
   position: relative;
+}
+
+.container {
+
+  display: flex;
+  justify-content: center;
+}
+
+.logo-weather {
+  width: 233;
+  height: 206;
+}
+
+.container2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.tempNumber {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 38px;
+}
+
+.container3 {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+#weatherName {
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+}
+
+.big-div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 35px;
+}
+
+.left-side {
+  display: flex;
+  margin-left: 22px;
+
+
+
+}
+
+.logo {
+  margin-right: 13px;
+}
+
+.right-side {
+  display: flex;
 }
 
 
