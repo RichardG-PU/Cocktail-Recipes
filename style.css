@@ -15,21 +15,46 @@ html {
   height: 100%; 
   margin: auto;
   margin-top: 2%;
-
+  display:block;
   background: rgba(255, 255, 255, 0.72);
   border-radius: 21px;
 }
 
 .location {
-  width: 100%;
+  width: 30px;
   height: 30px;
+  margin-top: 20px;
+  margin-left: 20px;
   background-repeat: no-repeat;
   background-size: contain;
+  display:inline-block;
   background-image: url(img/locationIcon.png);
 }
 
+.search {
+  width: 30px;
+  height: 30px;
+  margin-top: 20px;
+  margin-right: 20px;
+  float:right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(img/search.png);
+}
+
+#ville {
+  width: auto;
+  height: auto;
+  margin-left: 40px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display:inline-block;
+  font-size: 54px;
+  font-family: 'Dancing Script', cursive;
+}
+
 body {
-  height: 400px;
+  height: 370px;
 }
 
 header {
@@ -79,13 +104,11 @@ p {
   appearance: none;
   background-color: #FFFFFF;
   border-width: 0;
-  border-radius: 15px;
   box-sizing: border-box;
   color: #000000;
   cursor: pointer;
   display: inline-block;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  /* A VOIR */
+  font-family: Verdana, Geneva, Tahoma, sans-serif; /* A VOIR */
   font-size: 12px;
   letter-spacing: 0;
   line-height: 1em;
@@ -124,8 +147,7 @@ p {
 
 .button-48:hover:before {
   animation: opacityFallbackIn 0s step-start forwards;
-  /* clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
- */
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
 }
 
 .button-48:after {
