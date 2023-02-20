@@ -12,12 +12,20 @@ html {
 
 .weather {
   width: 40%;
-  height: 1000%; 
+  height: 100%; 
   margin: auto;
   margin-top: 2%;
 
   background: rgba(255, 255, 255, 0.72);
   border-radius: 21px;
+}
+
+.location {
+  width: 100%;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(img/locationIcon.png);
 }
 
 body {
@@ -127,8 +135,8 @@ p {
 }
 
 
-/* --------------- COMMENTED DRAFTS ---------------*/
 /*
+--------------- COMMENTED DRAFTS ---------------
 button {
   border: none;
   outline: none;
