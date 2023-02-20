@@ -1,28 +1,34 @@
-class Controleur{
+class Controleur {
     api_key = '1ac298995ec2f7c641fb3806216c0c04';
-    ville = "Montreal";
-    url = 'http://api.openweathermap.org/data/2.5/weather?q=' + ville + '&mode=xml&units=metric&appid=' + api_key;
+    ville = document.getElementById("ville").textContent;
+    url = 'http://api.openweathermap.org/data/2.5/weather?q=' + this.ville + '&mode=xml&units=metric&appid=' + this.api_key;
+    temp;
+    description;
+    humidity;
+    wind;
+
+
 
     loadMeteo() {
-        fetch(url)
+        console.log(this.url);
+        fetch(this.url)
             .then(reponse => reponse.text())
-                .then(xmlText => {
+            .then(xmlText => {
                 let parser = new DOMParser();
                 let xmlDoc = parser.parseFromString(xmlText, "application/xml");
-                let city = xmlDoc.getElementsByTagName("city")[0];
-                let texte = "noeud : " + city.nodeName + "<br/>";
-                texte += "name : " + city.getAttribute("name") + "<br/>";
-                texte += city.childNodes[1].nodeName + " : ";
-                texte += city.childNodes[1].childNodes[0].nodeValue + "<br/>";
+                this.temp = xmlDoc.getElementsByTagName("temperature")[0].getAttribute("value");
 
-                let temperature = xmlDoc.getElementsByTagName("temperature")[0];
-                texte += "noeud : " + temperature.nodeName + "<br/>";
-                texte += "value : " + temperature.getAttribute("value") + "<br/>";
-                texte += "unit : " + temperature.getAttribute("unit") + "<br/>";
-                document.getElementById("meteo").innerHTML = texte;
+                this.description = xmlDoc.getElementsByTagName("weather")[1];
+                this.humidity = xmlDoc.getElementsByTagName("humidity")[0];
+                this.wind = xmlDoc.getElementsByTagName("wind")[0];
+                console.log(this.temp);
+
+
+
+
+
             }
-        );
+            );
     }
 };
 
-window.onload() = loadMeteo();
