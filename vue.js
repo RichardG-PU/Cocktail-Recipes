@@ -1,11 +1,20 @@
-class vue {
-    c = new Controleur();
+class Vue {
+    c;
+    temp = "yo";
+    description;
+    humidity;
+    wind;
 
+    constructor(c) {
+        this.c = c;
+    }
 
-    afficheMeteo() {
-        this.c = new Controleur();
-        this.c.loadMeteo();
-        document.getElementById("tempNumber").innerHTML = this.c.temp;
+    async afficheMeteo() {
+        await this.c.loadMeteo();
+        document.getElementById("tempNumber").innerHTML = Math.floor(this.c.temp);
+        document.getElementById("weatherName").innerHTML = this.c.description;
+        document.getElementById("humidityNumber").innerHTML = this.c.humidity;
+        document.getElementById("wind-number").innerHTML = this.c.wind;
         console.log(this.c.temp);
         console.log("hello");
 

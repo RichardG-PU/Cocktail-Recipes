@@ -217,6 +217,32 @@ p {
   display: flex;
 }
 
+.containerSearchBar {
+  display: flex;
+  justify-content: flex-end;
+  height: 35px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.searchBar {
+  border-radius: 30px;
+  border: none;
+  opacity: 0.5;
+  margin-right: 30px;
+  font-family: 'Inter', sans-serif;
+}
+
+.containerDrinks {
+  height: 480px;
+  width: 630px;
+  background-color: white;
+  opacity: 0.53;
+
+}
+
+
+
 
 /*
 --------------- COMMENTED DRAFTS ---------------

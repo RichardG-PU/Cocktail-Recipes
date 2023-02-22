@@ -6,25 +6,26 @@ class Controleur {
     description;
     humidity;
     wind;
-    vue = new Vue();
+
+
+
 
 
 
     loadMeteo() {
         console.log(this.url);
-        fetch(this.url)
+        return fetch(this.url)
             .then(reponse => reponse.text())
             .then(xmlText => {
                 let parser = new DOMParser();
                 let xmlDoc = parser.parseFromString(xmlText, "application/xml");
                 this.temp = xmlDoc.getElementsByTagName("temperature")[0].getAttribute("value");
-
-                this.description = xmlDoc.getElementsByTagName("weather")[1];
-                this.humidity = xmlDoc.getElementsByTagName("humidity")[0];
-                this.wind = xmlDoc.getElementsByTagName("wind")[0];
+                this.description = xmlDoc.getElementsByTagName("weather")[0].getAttribute("value");
+                this.humidity = xmlDoc.getElementsByTagName("humidity")[0].getAttribute("value");
+                this.wind = xmlDoc.getElementsByTagName("speed")[0].getAttribute("value");
                 console.log(this.temp);
-                this.vue.afficheMeteo();
-
+                console.log(this.url);
+                return this;
 
 
 
@@ -33,9 +34,20 @@ class Controleur {
             );
     }
 };
-window.onload = function () {
-    (new Controleur()).loadMeteo();
+window.onload = async function () {
+    const c = await new Controleur().loadMeteo();
+    const vue = new Vue(c);
+    await vue.afficheMeteo();
+
+
+
+
+
+
+
 
 
 };
+
+
 
