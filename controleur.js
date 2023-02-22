@@ -7,11 +7,6 @@ class Controleur {
     humidity;
     wind;
 
-
-
-
-
-
     loadMeteo() {
         console.log(this.url);
         return fetch(this.url)
@@ -26,28 +21,12 @@ class Controleur {
                 console.log(this.temp);
                 console.log(this.url);
                 return this;
-
-
-
-
             }
-            );
+        );
     }
 };
 window.onload = async function () {
     const c = await new Controleur().loadMeteo();
     const vue = new Vue(c);
     await vue.afficheMeteo();
-
-
-
-
-
-
-
-
-
 };
-
-
-

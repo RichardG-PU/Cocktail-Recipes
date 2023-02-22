@@ -15,6 +15,16 @@ class Vue {
         document.getElementById("weatherName").innerHTML = this.c.description;
         document.getElementById("humidityNumber").innerHTML = this.c.humidity;
         document.getElementById("wind-number").innerHTML = this.c.wind;
+        switch(this.c.description) {
+            case "soleil":
+                document.getElementById("weatherImg").src = "/img/soleil.png"
+                break;
+            case "overcast clouds":
+                document.getElementById("weatherImg").src = "/img/cloudyForecast.png"
+                break;
+            default:
+                // code block
+        }
         console.log(this.c.temp);
         console.log("hello");
 
@@ -26,7 +36,4 @@ class Vue {
     afficheUneRecette() {
 
     }
-
-
 }
-
