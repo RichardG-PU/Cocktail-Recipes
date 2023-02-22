@@ -219,10 +219,11 @@ p {
 
 .containerSearchBar {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   height: 35px;
   margin-top: 40px;
   margin-bottom: 40px;
+
 }
 
 .searchBar {
@@ -231,6 +232,7 @@ p {
   opacity: 0.5;
   margin-right: 30px;
   font-family: 'Inter', sans-serif;
+  text-align: center;
 }
 
 .containerDrinks {
@@ -238,6 +240,34 @@ p {
   width: 630px;
   background-color: white;
   opacity: 0.53;
+  margin-bottom: 200px;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
+
+.containerRow1,
+.containerRow2 {
+  display: flex;
+  justify-content: space-around;
+  width: auto;
+  height: 50%;
+
+
+}
+
+.round {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background-color: blue;
+  margin-top: 40px;
+}
+
+#textRound {
+  text-align: center;
+  margin-top: 8px;
 
 }
 
