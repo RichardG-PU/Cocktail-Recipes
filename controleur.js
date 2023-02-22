@@ -38,15 +38,6 @@ window.onload = async function () {
     const c = await new Controleur().loadMeteo();
     const vue = new Vue(c);
     await vue.afficheMeteo();
-
-
-
-
-
-
-
-
-
 };
 
 
