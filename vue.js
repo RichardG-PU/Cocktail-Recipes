@@ -5,7 +5,7 @@ class Vue {
     humidity;
     wind;
 
-    constructor(c) {
+    constructor(c) { // c is a controler
         this.c = c;
     }
 
