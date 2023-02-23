@@ -13,8 +13,10 @@ html {
 .weather {
   width: 400px;
   height: 600px;
-  margin: auto;
   margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
   display: block;
   background: rgba(255, 255, 255, 0.72);
   border-radius: 21px;
@@ -204,9 +206,6 @@ p {
 .left-side {
   display: flex;
   margin-left: 22px;
-
-
-
 }
 
 .logo {
@@ -223,7 +222,6 @@ p {
   height: 35px;
   margin-top: 40px;
   margin-bottom: 40px;
-
 }
 
 .searchBar {
@@ -233,6 +231,8 @@ p {
   margin-right: 30px;
   font-family: 'Inter', sans-serif;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .containerDrinks {
@@ -252,7 +252,7 @@ p {
   display: flex;
   justify-content: space-around;
   width: auto;
-  height: 50%;
+  height: 40%;
 
 
 }
@@ -271,8 +271,10 @@ p {
 
 }
 
-
-
+.arrows {
+  margin-top: 4%;
+  text-align: center;
+}
 
 /*
 --------------- COMMENTED DRAFTS ---------------
