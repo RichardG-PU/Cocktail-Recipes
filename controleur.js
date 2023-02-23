@@ -8,7 +8,6 @@ class Controleur {
     wind;
 
     loadMeteo() {
-        console.log(this.url);
         return fetch(this.url)
             .then(reponse => reponse.text())
             .then(xmlText => {
@@ -19,8 +18,6 @@ class Controleur {
                 this.description = xmlDoc.getElementsByTagName("weather")[0].getAttribute("value");
                 this.humidity = xmlDoc.getElementsByTagName("humidity")[0].getAttribute("value");
                 this.wind = xmlDoc.getElementsByTagName("speed")[0].getAttribute("value");
-                console.log(this.temp);
-                console.log(this.url);
                 return this;
             }
             );

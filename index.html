@@ -33,7 +33,9 @@
             <br>
             <section>
                 <button class="button-48" role="button"><span class="text">Category</span></button>
-                <button class="button-48" role="button"><span class="text">Weather</span></button>
+                <a href="#weather">
+                    <button class="button-48" role="button"><span class="text">Weather</span></button>
+                </a>
             </section>
         </div>
     </header>
@@ -78,7 +80,7 @@
             </div>
         </div>
     </main>
-    <div class="weather">
+    <div class="weather" id="weather">
         <div class="location"></div>
         <input type="text" id="ville" value="Montreal"></input>
         <a onclick="new Vue(new Controleur).afficheMeteo()"><div class="search"></div></a>
@@ -101,9 +103,11 @@
                 <p id="humidity"> <span id="humidityNumber">50</span>%&NewLine; Humidity</p>
             </div>
             <div class="right-side">
-                <img src="icons8-wind-30.png" alt="">
-                <p><span id="wind-number">10</span>m/s&NewLine; Wind speed</p>
-
+                <img src="icons8-wind-60.png" alt="">
+                <a>
+                    <span id="wind-number">10</span>/s
+                    <p>Wind speed</p>
+                </a>
             </div>
         </div>
 
