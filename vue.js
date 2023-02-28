@@ -21,11 +21,13 @@ class Vue {
             document.getElementById("weatherImg").src = "vecteezy_weather-3d-icon_9386351_685-5-2.png";
         else if(this.c.description.includes("snow"))
             document.getElementById("weatherImg").src = "vecteezy_weather-3d-icon_9386351_685_3.png";
+        else if(this.c.description.includes("mist"))
+            document.getElementById("weatherImg").src = "mist.png";
 
     }
 
     afficheListeRecettes() {
-
+        
     }
     afficheUneRecette() {
 
