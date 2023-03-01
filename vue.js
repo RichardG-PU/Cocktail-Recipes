@@ -34,14 +34,33 @@ class Vue {
 
         while (this.compteur < 6) {
             await this.c.obtenirRecetteAleatoire();
-            document.getElementById("roundText" + this.compteur).innerHTML = this.c.drinkName;
+            console.log(this.c.drinkName.length);
+            if(this.c.drinkName.length > 15)
+                document.getElementById("roundText" + this.compteur).innerHTML = this.resizeText(this.c.drinkName);
+            else
+                document.getElementById("roundText" + this.compteur).innerHTML = this.c.drinkName;
             document.getElementById("r" + this.compteur).src = this.c.drinkImage;
             console.log(this.c.drinkImage);
             this.compteur++
         }
 
     }
-    afficheUneRecette() {
 
+    async afficheUneRecette() {
+
+    }
+
+    resizeText(text) {
+        let stringTable = text.split(" ");
+        let output = "";
+        let half = stringTable.length/2;
+
+        for(let i = 0; i < half; i++) {
+            output += stringTable[i] + " ";
+        }
+
+        output += "..."
+
+        return output;
     }
 }
