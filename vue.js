@@ -25,12 +25,11 @@ class Vue {
             document.getElementById("weatherImg").src = "vecteezy_weather-3d-icon_9386351_685-5-2.png";
         else if (this.c.description.includes("snow"))
             document.getElementById("weatherImg").src = "vecteezy_weather-3d-icon_9386351_685_3.png";
-        else if(this.c.description.includes("mist"))
+        else if (this.c.description.includes("mist"))
             document.getElementById("weatherImg").src = "mist.png";
 
     }
 
-<<<<<<< HEAD
     async afficheListeRecettes() {
 
         while (this.compteur < 6) {
@@ -41,10 +40,6 @@ class Vue {
             this.compteur++
         }
 
-=======
-    afficheListeRecettes() {
-        
->>>>>>> b8dfe38f117340e938660c74fa6c5eda5313ff6b
     }
     afficheUneRecette() {
 
