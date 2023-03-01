@@ -11,7 +11,7 @@ class Controleur {
     drinkImage;
 
     loadMeteo() {
-        return fetch(this.url)
+        return fetch(this.urlWeather)
             .then(reponse => reponse.text())
             .then(xmlText => {
                 let parser = new DOMParser();
