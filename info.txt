@@ -20,4 +20,5 @@ http://api.openweathermap.org/data/2.5/weather?q=Montreal&mode=xml&units=metric&
 
 
 
-pas de logo pour la description de temperature "mist"
+console.log(data.drinks[0].strDrink);
+
