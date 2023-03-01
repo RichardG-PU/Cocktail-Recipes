@@ -29,7 +29,7 @@ class Controleur {
     }
 
     obtenirRecetteAleatoire() {
-        return fetch(this.urlDrinkAlea).then((response) => response.json())
+        return fetch(this.urlDrinkAlea, { mode: 'no-cors'}).then((response) => response.json())
             .then((data) => {
                 this.drinkName = data.drinks[0].strDrink;
                 this.drinkImage = data.drinks[0].strDrinkThumb;
@@ -40,7 +40,7 @@ class Controleur {
     }
 
     obtenirRecetteId(id) {
-        return fetch(this.urlId + id).then((response) => response.json())
+        return fetch(this.urlId + id, { mode: 'no-cors'}).then((response) => response.json())
             .then((data) => {
                 this.drinkName = data.drinks[0].strDrink;
                 this.drinkImage = data.drinks[0].strDrinkThumb;
