@@ -9,6 +9,7 @@ class Controleur {
     wind;
     drinkName;
     drinkImage;
+    id;
 
     loadMeteo() {
         return fetch(this.url)
@@ -31,7 +32,8 @@ class Controleur {
             .then((data) => {
                 this.drinkName = data.drinks[0].strDrink;
                 this.drinkImage = data.drinks[0].strDrinkThumb;
-                console.log(this.drinkName);
+                this.id = data.drinks[0].idDrink;
+                console.log(this.urlDrinkAlea);
                 return this;
             });
     }

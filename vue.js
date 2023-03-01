@@ -7,6 +7,8 @@ class Vue {
     drinkName;
     drinkImage;
     compteur = 0;
+    drinks = [];
+    pos = 0;
 
 
     constructor(c) { // c is a controler
@@ -31,19 +33,33 @@ class Vue {
     }
 
     async afficheListeRecettes() {
-
+        let tab = [];
         while (this.compteur < 6) {
             await this.c.obtenirRecetteAleatoire();
-            console.log(this.c.drinkName.length);
             if(this.c.drinkName.length > 15)
                 document.getElementById("roundText" + this.compteur).innerHTML = this.resizeText(this.c.drinkName);
             else
                 document.getElementById("roundText" + this.compteur).innerHTML = this.c.drinkName;
             document.getElementById("r" + this.compteur).src = this.c.drinkImage;
-            console.log(this.c.drinkImage);
-            this.compteur++
-        }
 
+            this.compteur++;
+            tab.push(this.c.id);
+        }
+        this.compteur = 0;
+        this.drinks.push(tab);
+        console.log(this.drinks);
+    }
+
+    async go(direction) {
+        let num = 0;
+        switch(direction) {
+            case "left": num = -1; break;
+            case "right": num = 1; break;
+        }
+        if(this.drinks[this.pos + num] == null) {
+            if(num == 1)
+                return this.afficheListeRecettes();
+        }
     }
 
     async afficheUneRecette() {
