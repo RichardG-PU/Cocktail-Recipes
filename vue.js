@@ -36,7 +36,7 @@ class Vue {
         let tab = [];
         while (compteur < 6) {
             await this.c.obtenirRecetteAleatoire();
-            if(this.c.drinkName.length > 15)
+            if (this.c.drinkName.length > 15)
                 document.getElementById("roundText" + compteur).innerHTML = this.resizeText(this.c.drinkName);
             else
                 document.getElementById("roundText" + compteur).innerHTML = this.c.drinkName;
@@ -50,31 +50,34 @@ class Vue {
     }
 
     async load(pos2) {
-        for(let i = 0; i < this.drinks[pos2].length; i++) {
-            await this.c.obtenirRecetteId(this.drinks[pos2][i]);
-            if(this.c.drinkName.length > 15)
-                document.getElementById("roundText" + i).innerHTML = this.resizeText(this.c.drinkName);
-            else
-                document.getElementById("roundText" + i).innerHTML = this.c.drinkName;
-            document.getElementById("r" + i).src = this.c.drinkImage;
+        for await (const drink of this.drinks[pos2]) {
+            await this.c.obtenirRecetteId(drink);
+            if (this.c.drinkName.length > 15) {
+                document.getElementById("roundText" + this.drinks[pos2].indexOf(drink)).innerHTML = this.resizeText(this.c.drinkName);
+            } else {
+                console.log(this.drinks[pos2].indexOf(drink))
+                document.getElementById("roundText" + this.drinks[pos2].indexOf(drink)).innerHTML = this.c.drinkName;
+
+            }
+            document.getElementById("r" + this.drinks[pos2].indexOf(drink)).src = this.c.drinkImage;
         }
     }
 
     async go(direction) {
         let num = 0;
 
-        switch(direction) {
+        switch (direction) {
             case "left": num = -1; break;
             case "right": num = 1; break;
         }
 
-        if(this.drinks[this.pos + num] == null) {
-            if(num == 1) {
+        if (this.drinks[this.pos + num] == null) {
+            if (num == 1) {
                 this.pos++;
                 return this.afficheListeRecettes();
             }
-        } else if(this.drinks[this.pos + num] != null) {
-            if(num == 1) {
+        } else if (this.drinks[this.pos + num] != null) {
+            if (num == 1) {
                 this.pos++;
                 this.load(this.pos);
             } else {
@@ -82,7 +85,7 @@ class Vue {
                 this.load(this.pos);
             }
         }
-        
+
         return null;
     }
 
@@ -93,9 +96,9 @@ class Vue {
     resizeText(text) {
         let stringTable = text.split(" ");
         let output = "";
-        let half = stringTable.length/2;
+        let half = stringTable.length / 2;
 
-        for(let i = 0; i < half; i++) {
+        for (let i = 0; i < half; i++) {
             output += stringTable[i] + " ";
         }
 
