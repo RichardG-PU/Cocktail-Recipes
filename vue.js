@@ -6,7 +6,6 @@ class Vue {
     wind;
     drinkName;
     drinkImage;
-    compteur = 0;
     drinks = [];
     pos = 0;
 
@@ -33,26 +32,26 @@ class Vue {
     }
 
     async afficheListeRecettes() {
+        let compteur = 0;
         let tab = [];
-        while (this.compteur < 6) {
+        while (compteur < 6) {
             await this.c.obtenirRecetteAleatoire();
             if(this.c.drinkName.length > 15)
-                document.getElementById("roundText" + this.compteur).innerHTML = this.resizeText(this.c.drinkName);
+                document.getElementById("roundText" + compteur).innerHTML = this.resizeText(this.c.drinkName);
             else
-                document.getElementById("roundText" + this.compteur).innerHTML = this.c.drinkName;
-            document.getElementById("r" + this.compteur).src = this.c.drinkImage;
+                document.getElementById("roundText" + compteur).innerHTML = this.c.drinkName;
+            document.getElementById("r" + compteur).src = this.c.drinkImage;
 
-            this.compteur++;
+            compteur++;
             tab.push(this.c.id);
         }
-        this.compteur = 0;
         this.drinks.push(tab);
         console.log(this.drinks);
     }
 
     async load(pos2) {
-        for(let i = 0; i < this.drinks[pos2-1].length; i++) {
-            await this.c.obtenirRecetteId(this.drinks[pos2-1][i]);
+        for(let i = 0; i < this.drinks[pos2].length; i++) {
+            await this.c.obtenirRecetteId(this.drinks[pos2][i]);
             if(this.c.drinkName.length > 15)
                 document.getElementById("roundText" + i).innerHTML = this.resizeText(this.c.drinkName);
             else
@@ -75,12 +74,15 @@ class Vue {
                 return this.afficheListeRecettes();
             }
         } else if(this.drinks[this.pos + num] != null) {
-            if(num == 1)
-                this.load(this.pos++);
-            else
-                this.load(this.pos--);
+            if(num == 1) {
+                this.pos++;
+                this.load(this.pos);
+            } else {
+                this.pos--;
+                this.load(this.pos);
+            }
         }
-
+        
         return null;
     }
 
