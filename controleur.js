@@ -47,4 +47,10 @@ window.onload = async function () {
     await vue.afficheMeteo();
     await vue.afficheListeRecettes();
 
+    document.getElementById("leftArrow").addEventListener("click", function() {
+        vue.go("left");
+    });
+    document.getElementById("rightArrow").addEventListener("click", function() {
+        vue.go("right");
+    });
 };
