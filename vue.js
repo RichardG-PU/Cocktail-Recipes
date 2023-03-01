@@ -50,16 +50,38 @@ class Vue {
         console.log(this.drinks);
     }
 
+    async load(pos2) {
+        for(let i = 0; i < this.drinks[pos2-1].length; i++) {
+            await this.c.obtenirRecetteId(this.drinks[pos2-1][i]);
+            if(this.c.drinkName.length > 15)
+                document.getElementById("roundText" + i).innerHTML = this.resizeText(this.c.drinkName);
+            else
+                document.getElementById("roundText" + i).innerHTML = this.c.drinkName;
+            document.getElementById("r" + i).src = this.c.drinkImage;
+        }
+    }
+
     async go(direction) {
         let num = 0;
+
         switch(direction) {
             case "left": num = -1; break;
             case "right": num = 1; break;
         }
+
         if(this.drinks[this.pos + num] == null) {
-            if(num == 1)
+            if(num == 1) {
+                this.pos++;
                 return this.afficheListeRecettes();
+            }
+        } else if(this.drinks[this.pos + num] != null) {
+            if(num == 1)
+                this.load(this.pos++);
+            else
+                this.load(this.pos--);
         }
+
+        return null;
     }
 
     async afficheUneRecette() {

@@ -3,6 +3,7 @@ class Controleur {
     ville = document.getElementById("ville").value;
     url = 'http://api.openweathermap.org/data/2.5/weather?q=' + this.ville + '&mode=xml&units=metric&appid=' + this.api_key;
     urlDrinkAlea = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+    urlId = "http://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
     temp;
     description;
     humidity;
@@ -29,6 +30,17 @@ class Controleur {
 
     obtenirRecetteAleatoire() {
         return fetch(this.urlDrinkAlea).then((response) => response.json())
+            .then((data) => {
+                this.drinkName = data.drinks[0].strDrink;
+                this.drinkImage = data.drinks[0].strDrinkThumb;
+                this.id = data.drinks[0].idDrink;
+                console.log(this.urlDrinkAlea);
+                return this;
+            });
+    }
+
+    obtenirRecetteId(id) {
+        return fetch(this.urlId + id).then((response) => response.json())
             .then((data) => {
                 this.drinkName = data.drinks[0].strDrink;
                 this.drinkImage = data.drinks[0].strDrinkThumb;
