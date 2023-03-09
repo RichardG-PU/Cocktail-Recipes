@@ -2,7 +2,8 @@ html {
   height: 100%;
   background-attachment: fixed;
   scroll-behavior: smooth;
-  background-image: linear-gradient(to right bottom, #ffffff, #f7ecfa, #f9d6eb, #ffc0d0, #ffacaa, #ffae91, #f6b579, #e1bf67, #c6d47f, #abe6a4, #97f3ce, #93fdf6);
+
+  background-image: linear-gradient(to left, #a38b41, #909e65, #8aac8c, #98b5ab, #b6bbbb);
 }
 
 * {
@@ -86,9 +87,11 @@ header:hover {
   width: 100%;
   height: 100%;
   padding: 50px;
+
   color: #FFF;
   text-shadow: 1px 1px 1px #333;
-  background-image: linear-gradient(135deg, #9f05ff69 10%, #fd5e086b 100%);
+  background-image: linear-gradient(to left, #897431, #7a8753, #779679, #86a098, #a4a8a8);
+
 
 }
 
