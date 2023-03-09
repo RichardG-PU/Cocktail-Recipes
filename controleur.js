@@ -4,6 +4,7 @@ class Controleur {
     url = 'https://api.openweathermap.org/data/2.5/weather?q=' + this.ville + '&mode=xml&units=metric&appid=' + this.api_key;
     urlDrinkAlea = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
     urlId = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
+    urlNom = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
     temp;
     description;
     humidity;
@@ -11,6 +12,8 @@ class Controleur {
     drinkName;
     drinkImage;
     id;
+    searchedName;
+    searchedImage;
 
     loadMeteo() {
         return fetch(this.url)
@@ -35,7 +38,6 @@ class Controleur {
                 this.drinkName = data.drinks[0].strDrink;
                 this.drinkImage = data.drinks[0].strDrinkThumb;
                 this.id = data.drinks[0].idDrink;
-                console.log(this.urlDrinkAlea);
                 return this;
             });
     }
@@ -49,6 +51,16 @@ class Controleur {
                 this.id = data.drinks[0].idDrink;
                 console.log(this.urlDrinkAlea);
                 return this;
+            });
+    }
+
+    obtenirRecetteNom() {
+        return fetch(this.urlNom + document.getElementById("searchCocktail").value + "")
+            .then((response) => response.json())
+            .then((data) => {
+                this.searchedName = data.drinks[0].strDrink;
+                this.searchedImage = data.drinks[0].strDrinkThumb;
+                console.log(this.searchedName);
             });
     }
 };
@@ -66,5 +78,9 @@ window.onload = async function () {
     });
     document.getElementById("rightArrow").addEventListener("click", function() {
         vue.go("right");
+    });
+
+    await document.getElementById("searchCocktail").addEventListener("input", function() {
+        c.obtenirRecetteNom();
     });
 };
