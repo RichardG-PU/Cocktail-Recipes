@@ -54,13 +54,14 @@ class Controleur {
             });
     }
 
-    obtenirRecetteNom() {
-        return fetch(this.urlNom + document.getElementById("searchCocktail").value + "")
+    obtenirRecetteNom(nom) {
+        return fetch(this.urlNom + nom)
             .then((response) => response.json())
             .then((data) => {
                 this.searchedName = data.drinks[0].strDrink;
                 this.searchedImage = data.drinks[0].strDrinkThumb;
                 console.log(this.searchedName);
+                return this;
             });
     }
 };
@@ -81,6 +82,6 @@ window.onload = async function () {
     });
 
     await document.getElementById("searchCocktail").addEventListener("input", function() {
-        c.obtenirRecetteNom();
+        c.obtenirRecetteNom(document.getElementById("searchCocktail").value);
     });
 };
