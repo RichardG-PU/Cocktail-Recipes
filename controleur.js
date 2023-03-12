@@ -14,6 +14,8 @@ class Controleur {
     id;
     searchedName;
     searchedImage;
+    searchedInstructions = [];
+    searchedMeasures = [];
 
     loadMeteo() {
         return fetch(this.url)
@@ -61,6 +63,9 @@ class Controleur {
                 this.searchedName = data.drinks[0].strDrink;
                 this.searchedImage = data.drinks[0].strDrinkThumb;
                 console.log(this.searchedName);
+                console.log(data.drinks[0][strIngredient + i]);
+                for(let i = 1; i <= 15; i++) {
+                };
                 return this;
             });
     }
@@ -82,6 +87,6 @@ window.onload = async function () {
     });
 
     await document.getElementById("searchCocktail").addEventListener("input", function() {
-        c.obtenirRecetteNom(document.getElementById("searchCocktail").value);
+        vue.afficheUneRecette();
     });
 };
