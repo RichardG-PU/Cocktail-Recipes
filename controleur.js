@@ -15,8 +15,9 @@ class Controleur {
     searchedName;
     searchedImage;
     searchCocktailBar = document.getElementById("searchCocktail").addEventListener("keypress", this.obtenirRecetteNom());
-    searchedInstructions = [];
+    searchedInstructions;
     searchedMeasures = [];
+    strIngredient = "strIngredient";
 
     loadMeteo() {
         return fetch(this.url)
@@ -65,12 +66,18 @@ class Controleur {
                 this.searchedName = data.drinks[0].strDrink;
                 this.searchedImage = data.drinks[0].strDrinkThumb;
                 console.log(this.searchedName);
-                console.log(data.drinks[0][this.strIngredient + i]);
-                for (let i of data.drinks) {
-                    console.log(i.strIngredient + i, i.type());
-                    for (let j of i)
-                        console.log(j);
+
+                for (let i = 1; i <= 15; i++) {
+                    if (data.drinks[0]["strIngredient" + i] != null) {
+                        console.log(data.drinks[0]["strIngredient" + i]);
+
+                    }
+
+
+
                 };
+                this.searchedInstructions = data.drinks[0].strInstructions;
+                console.log(this.searchedInstructions);
                 return this;
             });
     }
