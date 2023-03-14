@@ -65,7 +65,7 @@ class Controleur {
                 this.searchedName = data.drinks[0].strDrink;
                 this.searchedImage = data.drinks[0].strDrinkThumb;
                 console.log(this.searchedName);
-                console.log(data.drinks[0][strIngredient + i]);
+                console.log(data.drinks[0][this.strIngredient + i]);
                 for (let i = 1; i <= 15; i++) {
                 };
                 return this;
