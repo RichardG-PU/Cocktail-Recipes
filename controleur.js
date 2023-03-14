@@ -14,6 +14,7 @@ class Controleur {
     id;
     searchedName;
     searchedImage;
+    searchCocktailBar = document.getElementById("searchCocktail").addEventListener("keypress", this.obtenirRecetteNom());
 
     loadMeteo() {
         return fetch(this.url)
@@ -54,7 +55,8 @@ class Controleur {
             });
     }
 
-    obtenirRecetteNom(nom) {
+    obtenirRecetteNom() {
+        let nom = document.getElementById("searchCocktail").value;
         return fetch(this.urlNom + nom)
             .then((response) => response.json())
             .then((data) => {
@@ -74,14 +76,14 @@ window.onload = async function () {
     await vue.afficheMeteo();
     await vue.afficheListeRecettes();
 
-    document.getElementById("leftArrow").addEventListener("click", function() {
+    document.getElementById("leftArrow").addEventListener("click", function () {
         vue.go("left");
     });
-    document.getElementById("rightArrow").addEventListener("click", function() {
+    document.getElementById("rightArrow").addEventListener("click", function () {
         vue.go("right");
     });
 
-    await document.getElementById("searchCocktail").addEventListener("input", function() {
+    await document.getElementById("searchCocktail").addEventListener("input", function () {
         c.obtenirRecetteNom(document.getElementById("searchCocktail").value);
     });
 };
