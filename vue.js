@@ -45,7 +45,6 @@ class Vue {
             tab.push(this.c.id);
         }
         this.drinks.push(tab);
-        console.log(this.drinks);
     }
 
     async load(pos2) {
@@ -54,7 +53,6 @@ class Vue {
             if (this.c.drinkName.length > 15) {
                 document.getElementById("roundText" + this.drinks[pos2].indexOf(drink)).innerHTML = this.resizeText(this.c.drinkName);
             } else {
-                console.log(this.drinks[pos2].indexOf(drink))
                 document.getElementById("roundText" + this.drinks[pos2].indexOf(drink)).innerHTML = this.c.drinkName;
 
             }

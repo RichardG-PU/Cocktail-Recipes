@@ -25,7 +25,6 @@ class Controleur {
             .then(xmlText => {
                 let parser = new DOMParser();
                 let xmlDoc = parser.parseFromString(xmlText, "application/xml");
-                console.log(ville);
                 this.temp = xmlDoc.getElementsByTagName("temperature")[0].getAttribute("value");
                 this.description = xmlDoc.getElementsByTagName("weather")[0].getAttribute("value");
                 this.humidity = xmlDoc.getElementsByTagName("humidity")[0].getAttribute("value");
@@ -53,7 +52,6 @@ class Controleur {
                 this.drinkName = data.drinks[0].strDrink;
                 this.drinkImage = data.drinks[0].strDrinkThumb;
                 this.id = data.drinks[0].idDrink;
-                console.log(this.urlDrinkAlea);
                 return this;
             });
     }
@@ -65,19 +63,19 @@ class Controleur {
             .then((data) => {
                 this.searchedName = data.drinks[0].strDrink;
                 this.searchedImage = data.drinks[0].strDrinkThumb;
-                console.log(this.searchedName);
+                document.getElementById("ingredients").innerHTML = "";
+                document.getElementById("measures").innerHTML = "";
 
                 for (let i = 1; i <= 15; i++) {
                     if (data.drinks[0]["strIngredient" + i] != null) {
-                        console.log(data.drinks[0]["strIngredient" + i]);
-
+                        document.getElementById("ingredients").innerHTML +=  data.drinks[0]["strIngredient" + i] + "<br>";
                     }
-
-
-
+                    if (data.drinks[0]["strMeasure" + i] != null) {
+                        document.getElementById("measures").innerHTML += data.drinks[0]["strMeasure" + i] + "<br>";
+                    }
                 };
                 this.searchedInstructions = data.drinks[0].strInstructions;
-                console.log(this.searchedInstructions);
+                document.getElementById("instructions").innerHTML = this.searchedInstructions;
                 return this;
             });
     }

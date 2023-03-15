@@ -252,9 +252,9 @@ p {
   margin-right: auto;
 }
 
-.containerDrinks1 {
+#containerDrinks1 {
   width: 480px;
-  height: 630px;
+  height: max-content;
   background-color: rgba(255, 255, 255, 0.53);
   margin-bottom: 40px;
   margin-left: auto;
