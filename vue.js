@@ -110,4 +110,24 @@ class Vue {
 
         return output;
     }
+
+    async afficherCategorie(categorie) {
+        let compteur = 0;
+        let tab = [];
+        while (compteur < 6) {
+            await this.c.obtenirCategorie(categorie, compteur);
+            while(!tab.includes(this.c.id)) {
+                if (this.c.drinkName.length > 15)
+                    document.getElementById("roundText" + compteur).innerHTML = this.resizeText(this.c.drinkName);
+                else
+                    document.getElementById("roundText" + compteur).innerHTML = this.c.drinkName;
+                document.getElementById("r" + compteur).src = this.c.drinkImage;
+
+                compteur++;
+                tab.push(this.c.id);
+            }
+        }
+        this.drinks.push(tab);
+    }
+
 }

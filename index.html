@@ -32,22 +32,7 @@
             </p>
             <br>
             <section>
-                <div class="dropdown">
-                    <button class="button-48" role="button"><span class="text">Category</span></button>
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a><a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a><a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a><a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a><a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                </div>
+                <button class="button-48" role="button"><span class="text">Category</span></button>
                 <a href="#weather">
                     <button class="button-48" role="button"><span class="text">Weather</span></button>
                 </a>
@@ -76,6 +61,26 @@
                 &nbsp;
             </section>
         </div>
+        <div class="cocktail-categories"><b>Categories</b>
+            <ul>
+                <li><button class="button-48" role="button" onclick="new Vue(new Controleur).afficherCategorie('Margaritas')">Margaritas</button></li>
+                <li><button class="button-48" role="button" onclick="new Vue(new Controleur).afficherCategorie('Ordinary Drink')">Ordinary Drink</button></li>
+                <li><button class="button-48" role="button" onclick="new Vue(new Controleur).afficherCategorie('Cocktail')">Cocktail</button></li>
+                <li><button class="button-48" role="button" onclick="new Vue(new Controleur).afficherCategorie('Shake')">Shake</button></li>
+            </ul>
+            <ul>
+                <li><button class="button-48" role="button" onclick="new Vue(new Controleur).afficherCategorie('Other/Unknown')">Other/Unknown</button></li>
+                <li><button class="button-48" role="button" onclick="new Vue(new Controleur).afficherCategorie('Cocoa')">Cocoa</button></li>
+                <li><button class="button-48" role="button" onclick="new Vue(new Controleur).afficherCategorie('Shot')">Shot</button></li>
+                <li><button class="button-48" role="button" onclick="new Vue(new Controleur).afficherCategorie('Coffee/Tea')">Coffee/Tea</button></li>
+            </ul>
+            <ul>
+                <li><button class="button-48" role="button" onclick="new Vue(new Controleur).afficherCategorie('Homemade Liqueur')">Homemade Liqueur</button></li>
+                <li><button class="button-48" role="button" onclick="new Vue(new Controleur).afficherCategorie('Punch/Party Drink')">Punch/Party Drink</button></li>
+                <li><button class="button-48" role="button" onclick="new Vue(new Controleur).afficherCategorie('Beer')">Beer</button></li>
+                <li><button class="button-48" role="button" onclick="new Vue(new Controleur).afficherCategorie('Soft Drink')">Soft Drink</button></li>
+            </ul>
+          </div>
         <div class="containerDrinks">
             <div class="containerRow1">
                 <div>

@@ -5,6 +5,7 @@ class Controleur {
     urlDrinkAlea = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
     urlId = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
     urlNom = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
+    urlCategorie = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c="
     temp;
     description;
     humidity;
@@ -76,6 +77,18 @@ class Controleur {
                 };
                 this.searchedInstructions = data.drinks[0].strInstructions;
                 document.getElementById("instructions").innerHTML = this.searchedInstructions;
+                return this;
+            });
+    }
+
+    obtenirCategorie(categorie, count) {
+        return fetch(this.urlCategorie + categorie)
+            .then((response) => response.json())
+            .then((data) => {
+                this.drinkName = data.drinks[count].strDrink;
+                console.log(data.drinks[count]);
+                this.drinkImage = data.drinks[count].strDrinkThumb;
+                this.id = data.drinks[count].idDrink;
                 return this;
             });
     }

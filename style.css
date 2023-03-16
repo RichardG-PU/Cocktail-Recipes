@@ -80,8 +80,36 @@ header {
 }
 
 header:hover {
-  height: 400px;
+  height: 450px;
   /* gotta change this depending on elements in the header */
+}
+
+.cocktail-categories {
+  height: auto;
+  width: 670px;
+  background-color: rgba(255, 255, 255, 0.336);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 30px;
+  font-family: 'Dancing Script', cursive;
+}
+
+.cocktail-categories ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.cocktail-categories li {
+  margin-right: 10px;
+  text-align: center;
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .overlay {
@@ -142,7 +170,7 @@ p {
 .button-48:before {
   animation: opacityFallbackOut .5s step-end forwards;
   backface-visibility: hidden;
-  background-color: #EBEBEB;
+  background-color: #ebebebd2;
   clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
   content: "";
   height: 100%;
@@ -248,40 +276,6 @@ p {
   margin-bottom: 200px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  top:auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-  z-index: 2;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover .dropbtn {
-  background-color: #3e8e41;
 }
 
 #containerDrinks1 {
