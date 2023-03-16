@@ -73,6 +73,7 @@ header {
   background-attachment: fixed;
   position: relative;
   overflow: hidden;
+  z-index: 1;
   border-radius: 0 0 85% 85% / 30%;
   transition: height 1.5s;
   /* gotta change this depending on height */
@@ -85,14 +86,12 @@ header:hover {
 
 .overlay {
   width: 100%;
-  height: 100%;
+  height: max-content;
   padding: 50px;
 
   color: #FFF;
   text-shadow: 1px 1px 1px #333;
   background-image: linear-gradient(to left, #897431, #7a8753, #779679, #86a098, #a4a8a8);
-
-
 }
 
 h1 {
@@ -274,6 +273,7 @@ p {
 
 .dropdown-content a:hover {
   background-color: #ddd;
+  z-index: 2;
 }
 
 .dropdown:hover .dropdown-content {
