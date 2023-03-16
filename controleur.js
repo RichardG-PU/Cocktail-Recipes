@@ -19,6 +19,7 @@ class Controleur {
     searchedInstructions;
     searchedMeasures = [];
     strIngredient = "strIngredient";
+    containerDrinks = document.getElementById("containerDrinks1");
 
     loadMeteo() {
         return fetch(this.url)
@@ -59,6 +60,7 @@ class Controleur {
 
     obtenirRecetteNom() {
         let nom = document.getElementById("searchCocktail").value;
+
         return fetch(this.urlNom + nom)
             .then((response) => response.json())
             .then((data) => {
@@ -69,7 +71,7 @@ class Controleur {
 
                 for (let i = 1; i <= 15; i++) {
                     if (data.drinks[0]["strIngredient" + i] != null) {
-                        document.getElementById("ingredients").innerHTML +=  data.drinks[0]["strIngredient" + i] + "<br>";
+                        document.getElementById("ingredients").innerHTML += data.drinks[0]["strIngredient" + i] + "<br>";
                     }
                     if (data.drinks[0]["strMeasure" + i] != null) {
                         document.getElementById("measures").innerHTML += data.drinks[0]["strMeasure" + i] + "<br>";
@@ -77,6 +79,7 @@ class Controleur {
                 };
                 this.searchedInstructions = data.drinks[0].strInstructions;
                 document.getElementById("instructions").innerHTML = this.searchedInstructions;
+
                 return this;
             });
     }

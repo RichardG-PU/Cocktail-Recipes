@@ -420,7 +420,7 @@ p {
     margin-top: 8px;
     font-size: 2vw;
   }
-  
+
   .textRoundR {
     text-align: center;
     margin-top: 8px;
@@ -457,7 +457,7 @@ p {
     margin-bottom: 15px;
     font-family: 'Dancing Script', cursive;
   }
-  
+
   .cocktail-categories ul {
     list-style: none;
     margin: 0;
@@ -466,7 +466,7 @@ p {
     text-align: center;
     justify-content: center;
   }
-  
+
   .cocktail-categories li {
     margin-right: 5px;
     text-align: center;
@@ -504,7 +504,7 @@ p {
     vertical-align: baseline;
     white-space: nowrap;
   }
-  
+
   .button-480:before {
     animation: opacityFallbackOut .5s step-end forwards;
     backface-visibility: hidden;
@@ -519,16 +519,16 @@ p {
     transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
     width: 100%;
   }
-  
+
   .button-480:hover:before {
     animation: opacityFallbackIn 0s step-start forwards;
     clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
   }
-  
+
   .button-480:after {
     background-color: #FFFFFF;
   }
-  
+
   .button-480 span {
     position: relative;
   }
@@ -545,7 +545,7 @@ p {
     border-radius: 0 0 85% 85% / 30%;
     transition: height 1.5s;
   }
-  
+
   header:hover {
     height: 100%;
   }
@@ -559,7 +559,7 @@ p {
     width: 100%;
     height: max-content;
     padding: 25px;
-  
+
     color: #FFF;
     text-shadow: 1px 1px 1px #333;
     background-image: linear-gradient(to left, #897431, #7a8753, #779679, #86a098, #a4a8a8);

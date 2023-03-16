@@ -91,6 +91,12 @@ class Vue {
 
     async afficheUneRecette() {
         await this.c.obtenirRecetteNom(document.getElementById("searchCocktail").value);
+        if (this.c.obtenirRecetteNom(document.getElementById("searchCocktail").value == null || "")) {
+            this.c.containerDrinks.style.visibility = "hidden"
+            this.c.containerDrinks.style.height = "1px";
+        }
+        this.c.containerDrinks.style.visibility = "visible"
+        this.c.containerDrinks.style.height = "100%";
         document.getElementById("r").src = this.c.searchedImage;
         document.getElementById("roundText").innerHTML = this.c.searchedName
         for (let i = 1; i <= 15; i++) {
@@ -116,7 +122,7 @@ class Vue {
         let tab = [];
         while (compteur < 6) {
             await this.c.obtenirCategorie(categorie, compteur);
-            while(!tab.includes(this.c.id)) {
+            while (!tab.includes(this.c.id)) {
                 if (this.c.drinkName.length > 15)
                     document.getElementById("roundText" + compteur).innerHTML = this.resizeText(this.c.drinkName);
                 else
