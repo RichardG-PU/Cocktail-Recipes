@@ -97,6 +97,11 @@ window.onload = async function () {
     });
 
     await document.getElementById("searchCocktail").addEventListener("input", function () {
-        vue.afficheUneRecette();
+        if (document.getElementById("searchCocktail").innerHTML == "" || document.getElementById("searchCocktail").innerHTML == null) {
+            document.getElementById("containerDrinks1").style.height = "0px";
+        } else {
+            document.getElementById("containerDrinks1").style.height = "max-content";
+            vue.afficheUneRecette();
+        }
     });
 };
