@@ -165,7 +165,6 @@ p {
 }
 
 .button-48 span {
-  z-index: 1;
   position: relative;
 }
 
@@ -271,7 +270,6 @@ p {
 .dropdown {
   position: relative;
   display: inline-block;
-  z-index: 2147483647;
 }
 
 .dropdown-content a:hover {
