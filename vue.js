@@ -28,6 +28,9 @@ class Vue {
             document.getElementById("weatherImg").src = "vecteezy_weather-3d-icon_9386351_685_3.png";
         else if (this.c.description.includes("mist"))
             document.getElementById("weatherImg").src = "mist.png";
+        else if (this.c.description.includes("rain"))
+            document.getElementById("weatherImg").src = "vecteezy_weather-3d-icon_9386351_685_2.png";
+
     }
 
     async afficheListeRecettes() {
@@ -90,7 +93,7 @@ class Vue {
         await this.c.obtenirRecetteNom(document.getElementById("searchCocktail").value);
         document.getElementById("r").src = this.c.searchedImage;
         document.getElementById("roundText").innerHTML = this.c.searchedName
-        for(let i = 1; i <= 15; i++) {
+        for (let i = 1; i <= 15; i++) {
         }
     }
 
