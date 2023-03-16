@@ -1,5 +1,6 @@
 html {
   height: 100%;
+  width: 100%;
   background-attachment: fixed;
   scroll-behavior: smooth;
 
@@ -80,8 +81,12 @@ header {
 }
 
 header:hover {
-  height: 450px;
-  /* gotta change this depending on elements in the header */
+  height: 100%;
+}
+
+.title {
+  font-size: 85px;
+  font-family: 'Dancing Script', cursive;
 }
 
 .cocktail-categories {
@@ -192,6 +197,65 @@ p {
 }
 
 .button-48 span {
+  position: relative;
+}
+
+.button-480 {
+  appearance: none;
+  background-color: #FFFFFF;
+  border-width: 0;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* A VOIR */
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 1em;
+  margin: .1em;
+  margin-top: .3em;
+  opacity: 1;
+  outline: 0;
+  padding: 1em 1.7em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1), background-color 100ms cubic-bezier(.694, 0, 0.335, 1), color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.button-480:before {
+  animation: opacityFallbackOut .5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: #ebebebd2;
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+.button-480:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.button-480:after {
+  background-color: #FFFFFF;
+}
+
+.button-480 span {
   position: relative;
 }
 
@@ -326,6 +390,177 @@ p {
 .arrows {
   margin-top: 4%;
   text-align: center;
+}
+
+@media only screen and (max-width: 640px) {
+  #containerDrinks1 {
+    width: 300px;
+    height: max-content;
+    background-color: rgba(255, 255, 255, 0.53);
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .containerDrinks {
+    height: 240px;
+    width: 315px;
+    background-color: rgba(255, 255, 255, 0.53);
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .textRound {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 2vw;
+  }
+  
+  .textRoundR {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 5vw;
+  }
+
+  .round {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 20px;
+  }
+
+  #rightArrow {
+    width: 20px;
+    height: 20px;
+    margin-top: 6px;
+  }
+
+  #leftArrow {
+    width: 20px;
+    height: 20px;
+    margin-top: 6px;
+  }
+
+  .cocktail-categories {
+    height: auto;
+    width: 335px;
+    background-color: rgba(255, 255, 255, 0.336);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 15px;
+    font-family: 'Dancing Script', cursive;
+  }
+  
+  .cocktail-categories ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .cocktail-categories li {
+    margin-right: 5px;
+    text-align: center;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .button-480 {
+    appearance: none;
+    background-color: #FFFFFF;
+    border-width: 0;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* A VOIR */
+    font-size: 8px;
+    letter-spacing: 0;
+    line-height: 1em;
+    margin-top: .3em;
+    margin-bottom: .7em;
+    opacity: 1;
+    outline: 0;
+    padding: .7em .7em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-rendering: geometricprecision;
+    text-transform: uppercase;
+    transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1), background-color 100ms cubic-bezier(.694, 0, 0.335, 1), color 100ms cubic-bezier(.694, 0, 0.335, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    white-space: nowrap;
+  }
+  
+  .button-480:before {
+    animation: opacityFallbackOut .5s step-end forwards;
+    backface-visibility: hidden;
+    background-color: #ebebebd2;
+    clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translateZ(0);
+    transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+    width: 100%;
+  }
+  
+  .button-480:hover:before {
+    animation: opacityFallbackIn 0s step-start forwards;
+    clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+  }
+  
+  .button-480:after {
+    background-color: #FFFFFF;
+  }
+  
+  .button-480 span {
+    position: relative;
+  }
+
+  header {
+    text-align: center;
+    width: 100%;
+    height: 100px;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 0 0 85% 85% / 30%;
+    transition: height 1.5s;
+  }
+  
+  header:hover {
+    height: 100%;
+  }
+
+  .title {
+    font-size: 54px;
+    font-family: 'Dancing Script', cursive;
+  }
+
+  .overlay {
+    width: 100%;
+    height: max-content;
+    padding: 25px;
+  
+    color: #FFF;
+    text-shadow: 1px 1px 1px #333;
+    background-image: linear-gradient(to left, #897431, #7a8753, #779679, #86a098, #a4a8a8);
+  }
 }
 
 

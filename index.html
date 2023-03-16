@@ -25,14 +25,16 @@
 <body>
     <header>
         <div class="overlay">
-            <h1>Cocktail Recipes</h1>
+            <p class="title">Cocktail Recipes</p>
             <p>Elevate your cocktail game with L'apero a la quebecoise - the perfect blend of sophistication and flavor.
                 Sip,
                 savor, and indulge in the ultimate cocktail experience.
             </p>
             <br>
             <section>
-                <button class="button-48" role="button"><span class="text">Category</span></button>
+                <a href="#instructions">
+                    <button class="button-48" role="button"><span class="text">Category</span></button>
+                </a>
                 <a href="#weather">
                     <button class="button-48" role="button"><span class="text">Weather</span></button>
                 </a>
@@ -61,24 +63,20 @@
                 &nbsp;
             </section>
         </div>
-        <div class="cocktail-categories"><b>Categories</b>
+        <div class="cocktail-categories" id="categories"><b>Categories</b>
             <ul>
-                <li><button class="button-48" role="button" onclick="new Vue(new Controleur).afficherCategorie('Margaritas')">Margaritas</button></li>
-                <li><button class="button-48" role="button" onclick="new Vue(new Controleur).afficherCategorie('Ordinary Drink')">Ordinary Drink</button></li>
-                <li><button class="button-48" role="button" onclick="new Vue(new Controleur).afficherCategorie('Cocktail')">Cocktail</button></li>
-                <li><button class="button-48" role="button" onclick="new Vue(new Controleur).afficherCategorie('Shake')">Shake</button></li>
+                <li><button class="button-480" role="button" onclick="new Vue(new Controleur).afficherCategorie('Cocktail')">Cocktail</button></li>
+                <li><button class="button-480" role="button" onclick="new Vue(new Controleur).afficherCategorie('Shake')">Shake</button></li>
+                <li><button class="button-480" role="button" onclick="new Vue(new Controleur).afficherCategorie('Cocoa')">Cocoa</button></li>
             </ul>
             <ul>
-                <li><button class="button-48" role="button" onclick="new Vue(new Controleur).afficherCategorie('Other/Unknown')">Other/Unknown</button></li>
-                <li><button class="button-48" role="button" onclick="new Vue(new Controleur).afficherCategorie('Cocoa')">Cocoa</button></li>
-                <li><button class="button-48" role="button" onclick="new Vue(new Controleur).afficherCategorie('Shot')">Shot</button></li>
-                <li><button class="button-48" role="button" onclick="new Vue(new Controleur).afficherCategorie('Coffee/Tea')">Coffee/Tea</button></li>
+                <li><button class="button-480" role="button" onclick="new Vue(new Controleur).afficherCategorie('Ordinary Drink')">Ordinary Drink</button></li>
+                <li><button class="button-480" role="button" onclick="new Vue(new Controleur).afficherCategorie('Homemade Liqueur')">Homemade Liqueur</button></li>
             </ul>
             <ul>
-                <li><button class="button-48" role="button" onclick="new Vue(new Controleur).afficherCategorie('Homemade Liqueur')">Homemade Liqueur</button></li>
-                <li><button class="button-48" role="button" onclick="new Vue(new Controleur).afficherCategorie('Punch/Party Drink')">Punch/Party Drink</button></li>
-                <li><button class="button-48" role="button" onclick="new Vue(new Controleur).afficherCategorie('Beer')">Beer</button></li>
-                <li><button class="button-48" role="button" onclick="new Vue(new Controleur).afficherCategorie('Soft Drink')">Soft Drink</button></li>
+                <li><button class="button-480" role="button" onclick="new Vue(new Controleur).afficherCategorie('Beer')">Beer</button></li>
+                <li><button class="button-480" role="button" onclick="new Vue(new Controleur).afficherCategorie('Shot')">Shot</button></li>
+                <li><button class="button-480" role="button" onclick="new Vue(new Controleur).afficherCategorie('Soft Drink')">Soft Drink</button></li>
             </ul>
           </div>
         <div class="containerDrinks">

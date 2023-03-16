@@ -86,7 +86,6 @@ class Controleur {
             .then((response) => response.json())
             .then((data) => {
                 this.drinkName = data.drinks[count].strDrink;
-                console.log(data.drinks[count]);
                 this.drinkImage = data.drinks[count].strDrinkThumb;
                 this.id = data.drinks[count].idDrink;
                 return this;
