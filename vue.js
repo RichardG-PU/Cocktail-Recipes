@@ -18,7 +18,7 @@ class Vue {
         await this.c.loadMeteo();
         document.getElementById("tempNumber").innerHTML = Math.floor(this.c.temp);
         document.getElementById("weatherName").innerHTML = this.c.description;
-        document.getElementById("humidity").innerHTML = this.c.humidity;
+        document.getElementById("humidity").innerHTML = this.c.humidity + "%";
         document.getElementById("wind-number").innerHTML = this.c.wind;
         if (this.c.description.includes("sun") || this.c.description.includes("clear sky"))
             document.getElementById("weatherImg").src = "vecteezy_weather-3d-icon_9386351_685-2-2.png";
