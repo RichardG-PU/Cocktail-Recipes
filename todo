@@ -1,6 +1,5 @@
-- Faire la fonction recherche de cocktail par son name et **change le ui du drink container en fonction de la boisson rechercher**
+
 - Ajuster le style visuel de la carte meteo. * Humidite et le vent *
 - creer la section de categorie lorsque on clique sur le bouton category dans le nav bar
-- Rendre l'animation de changement de page dans le container drink plus Smooth
+
 - Adapter le site sur mobile
-- pas d'image pour light rain
