@@ -21,15 +21,15 @@ class Vue {
         document.getElementById("humidity").innerHTML = this.c.humidity + "%<br> Humidity";
         document.getElementById("wind-number").innerHTML = this.c.wind;
         if (this.c.description.includes("sun") || this.c.description.includes("clear sky"))
-            document.getElementById("weatherImg").src = "vecteezy_weather-3d-icon_9386351_685-2-2.png";
+            document.getElementById("weatherImg").src = "/img/sun.png";
         else if (this.c.description.includes("cloud"))
-            document.getElementById("weatherImg").src = "vecteezy_weather-3d-icon_9386351_685-5-2.png";
+            document.getElementById("weatherImg").src = "/img/cloud.png";
         else if (this.c.description.includes("snow"))
-            document.getElementById("weatherImg").src = "vecteezy_weather-3d-icon_9386351_685_3.png";
+            document.getElementById("weatherImg").src = "/img/snow.png";
         else if (this.c.description.includes("mist"))
-            document.getElementById("weatherImg").src = "mist.png";
+            document.getElementById("weatherImg").src = "/img/mist.png";
         else if (this.c.description.includes("rain"))
-            document.getElementById("weatherImg").src = "vecteezy_weather-3d-icon_9386351_685_2.png";
+            document.getElementById("weatherImg").src = "/img/rain.png";
 
     }
 
